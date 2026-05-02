@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "device": "cuda",
+  "dataset": {
+    "root": "data/UIEB",
+    "image_size": 256,
+    "batch_size": 4,
+    "num_workers": 2
+  },
+  "model": {
+    "nafnet_code_dir": "external/NAFNet",
+    "pretrained_weights": "weights/nafnet_pretrained.pth"
+  },
+  "training": {
+    "head_only_epochs": 5,
+    "full_finetune_epochs": 20,
+    "head_lr": 0.0001,
+    "full_lr": 0.00001,
+    "save_dir": "outputs/checkpoints"
+  }
+}

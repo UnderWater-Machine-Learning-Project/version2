@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+data/UIEB/
+weights/*.pth
+weights/*.pt
+weights/*.ckpt
+outputs/checkpoints/
+outputs/logs/
