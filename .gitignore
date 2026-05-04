@@ -1,6 +1,5 @@
 # Dataset — too large for GitHub
 data/
-dataset/
 
 # Output images
 output/
@@ -18,3 +17,6 @@ uie/
 
 # Jupyter notebooks checkpoints
 .ipynb_checkpoints/
+
+logs/
+
