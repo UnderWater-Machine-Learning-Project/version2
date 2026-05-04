@@ -1,5 +1,6 @@
 # Dataset — too large for GitHub
-data/
+data/UIEB/*0
+data/UIEB/All_Results/UWCNN/*0
 
 # Output images
 output/
@@ -19,4 +20,3 @@ uie/
 .ipynb_checkpoints/
 
 logs/
-

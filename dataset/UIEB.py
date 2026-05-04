@@ -77,12 +77,7 @@ class UIEBDataset(data.Dataset):
                 if rand_rot:
                     data   = FF.rotate(data, 90 * rand_rot)
                     target = FF.rotate(target, 90 * rand_rot)
-            else:
-                # ── TEST/VAL: NO augmentation — just resize to fixed size ─────
-                # Do NOT use RandomCrop or any random transform at test time.
-                # Consistent resize ensures PSNR/SSIM are comparable across epochs.
-                data   = tfs.Resize([self.train_size, self.train_size])(data)
-                target = tfs.Resize([self.train_size, self.train_size])(target)
+            # else: TEST — no resize, no augment, pass full resolution as-is
 
             data   = tfs.ToTensor()(data)
             target = tfs.ToTensor()(target)
@@ -92,8 +87,7 @@ class UIEBDataset(data.Dataset):
                 target = tfs.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])(target)
 
         else:
-            # ── PRED (C60): resize + convert, no GT augmentation needed ───────
-            data   = tfs.Resize([self.train_size, self.train_size])(data)
+            # ── PRED (C60): no resize, pass full resolution ───────────────────
             data   = tfs.ToTensor()(data)
             target = tfs.ToTensor()(target)
             if self.input_norm:
