@@ -1,0 +1,20 @@
+# Dataset — too large for GitHub
+data/
+dataset/
+
+# Output images
+output/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Conda/venv environment
+uie/
+*.egg-info/
+
+
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
